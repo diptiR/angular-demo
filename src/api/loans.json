@@ -1,0 +1,48 @@
+{
+  "loans": [
+    {
+      "loanId": "personal1",
+      "borrowerFirstName": "Aditya",
+      "borrowerMiddleName": "Suresh",
+      "borrowerLastName": "Acharya",
+      "type": "Personal",
+      "emiAmt": 20000,
+      "rateOfInterest": 8.5,
+      "loanAmt": 1000000,
+      "balanceAmt": 800000
+    },
+    {
+      "loanId": "personal2",
+      "borrowerFirstName": "Bhavit",
+      "borrowerMiddleName": "Suresh",
+      "borrowerLastName": "Acharya",
+      "type": "Personal",
+      "emiAmt": 5000,
+      "rateOfInterest": 8.5,
+      "loanAmt": 100000,
+      "balanceAmt": 80000
+    },
+    {
+      "loanId": "personal3",
+      "borrowerFirstName": "Christia",
+      "borrowerMiddleName": "Andrew",
+      "borrowerLastName": "Dsouza",
+      "type": "Personal",
+      "emiAmt": 10000,
+      "rateOfInterest": 8.5,
+      "loanAmt": 500000,
+      "balanceAmt": 50000
+    },
+    {
+      "loanId": "personal4",
+      "borrowerFirstName": "Dharmesh",
+      "borrowerMiddleName": "Remo",
+      "borrowerLastName": "Dsouza",
+      "type": "Personal",
+      "emiAmt": 10000,
+      "rateOfInterest": 8.5,
+      "loanAmt": 500000,
+      "balanceAmt": 50000
+    }
+  ]
+}

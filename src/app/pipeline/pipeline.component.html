@@ -1,0 +1,36 @@
+<div class="float-right">
+  <button class="btn btn-secondary">Add Loan</button>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Loan Id</th>
+      <th>Borrower</th>
+      <th>Type</th>
+      <th>EMI Amount</th>
+      <th>Rate of Interest</th>
+      <th>Loan Amount</th>
+      <th>Balance</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="loans.length">
+    <tr (click)="loanClicked(loan.loanId)" *ngFor="let loan of loans">
+      <td>{{ loan?.loanId }}</td>
+      <td>
+        {{
+          loan?.borrowerFirstName +
+            " " +
+            loan?.borrowerMiddleName +
+            " " +
+            loan?.borrowerLastName
+        }}
+      </td>
+      <td>{{ loan?.type }}</td>
+      <td>{{ loan?.emiAmt }}</td>
+      <td>{{ loan?.rateOfInterest }}</td>
+      <td>{{ loan?.loanAmt }}</td>
+      <td>{{ loan?.balanceAmt }}</td>
+    </tr>
+  </tbody>
+</table>
