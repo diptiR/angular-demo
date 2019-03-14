@@ -7,15 +7,20 @@ import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home/home.component";
 import { PipelineComponent } from "./pipeline/pipeline.component";
 import { PipelineResolver } from "./pipeline/pipelineResolver.service";
-import { LoanComponent } from "./loan/loan.component";
+import { LoanCanLoad } from "./loan/loanCanLoad";
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, PipelineComponent, LoanComponent],
+  declarations: [AppComponent, HomeComponent, PipelineComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot([
       { path: "home", component: HomeComponent },
+      {
+        path: "loan/:id",
+        loadChildren: './loan/loan-forms.module#LoanFormsModule',
+        canLoad: [LoanCanLoad]
+      },
       {
         path: "pipeline",
         component: PipelineComponent,
@@ -23,14 +28,10 @@ import { LoanComponent } from "./loan/loan.component";
           data: PipelineResolver
         }
       },
-      {
-        path: "loan/:id",
-        component: LoanComponent
-      },
       { path: "", redirectTo: "home", pathMatch: "full" }
     ])
   ],
-  providers: [PipelineResolver],
+  providers: [PipelineResolver, LoanCanLoad],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
