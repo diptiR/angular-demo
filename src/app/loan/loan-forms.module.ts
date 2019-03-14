@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms'
 
 import { SummaryComponent } from './loan-form/summary/summary.component'
 import { LoanComponent } from "./loan.component";
@@ -14,6 +15,7 @@ import { InstallmentComponent } from './loan-form/installment/installment.compon
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     HttpClientModule,
     RouterModule.forChild([
       {

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from "@angular/router";
+import { Loan } from "./interface/loan.interface";
 
 @Component({
   selector: 'pm-summary',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SummaryComponent implements OnInit {
 
-  constructor() { }
+  currentLoan: Loan;
+
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    this.activatedRoute.parent.data.subscribe(
+      (response) => {
+        this.currentLoan = <Loan>response.loan;
+      }
+    )
   }
 
 }
