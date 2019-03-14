@@ -1,5 +1,6 @@
 <div class="float-right">
-  <button class="btn btn-secondary">Add Loan</button>
+  <button class="btn btn-secondary"
+          [routerLink]="'/new-loan'">Add Loan</button>
 </div>
 
 <table class="table table-striped">
@@ -15,16 +16,11 @@
     </tr>
   </thead>
   <tbody *ngIf="loans.length">
-    <tr (click)="loanClicked(loan.loanId)" *ngFor="let loan of loans">
+    <tr (click)="loanClicked(loan.loanId)"
+        *ngFor="let loan of loans">
       <td>{{ loan?.loanId }}</td>
       <td>
-        {{
-          loan?.borrowerFirstName +
-            " " +
-            loan?.borrowerMiddleName +
-            " " +
-            loan?.borrowerLastName
-        }}
+        {{ loan?.borrowerFirstName + " " + loan?.borrowerMiddleName + " " + loan?.borrowerLastName }}
       </td>
       <td>{{ loan?.type }}</td>
       <td>{{ loan?.emiAmt }}</td>

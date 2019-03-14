@@ -8,14 +8,16 @@ import { HomeComponent } from "./home/home.component";
 import { PipelineComponent } from "./pipeline/pipeline.component";
 import { PipelineResolver } from "./pipeline/pipelineResolver.service";
 import { LoanCanLoad } from "./loan/loanCanLoad";
+import { AddLoanComponent } from './add-loan/add-loan.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, PipelineComponent],
+  declarations: [AppComponent, HomeComponent, PipelineComponent, AddLoanComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot([
       { path: "home", component: HomeComponent },
+      { path: "new-loan", component: AddLoanComponent },
       {
         path: "loan/:id",
         loadChildren: './loan/loan-forms.module#LoanFormsModule',
