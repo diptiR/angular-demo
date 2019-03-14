@@ -8,10 +8,10 @@ import { Observable } from "rxjs";
 @Injectable()
 export class LoanResolver implements Resolve<Loan> {
 
-    constructor(private http: HttpClient){}
+    constructor(private http: HttpClient) { }
 
     resolve(): Observable<Loan> {
-        const url =  "../api/loan.json";
+        const url = "../api/loan.json";
         return this.http.get<Loan>(url)
     }
 }
