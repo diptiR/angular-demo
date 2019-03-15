@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from "@angular/forms";
 
 @Component({
   selector: 'pm-borrower',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BorrowerComponent implements OnInit {
 
+  borrowerForm: FormGroup = new FormGroup({
+      firstName: new FormControl("")
+  });
+
   constructor() { }
 
   ngOnInit() {
+    this.borrowerForm.disable();
   }
 
 }

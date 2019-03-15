@@ -10,40 +10,21 @@
                [ngModel]="currentLoan.loanId" />
       </div>
     </div>
-    <div class="col-6"></div>
   </div>
   <div class="row">
-    <div class="col-4">
-      <div class="form-group">
-        <label>Borrower First Name</label>
-        <input type="text"
-               class="form-control"
-               readonly
-               [ngModel]="currentLoan.borrowerFirstName" />
-      </div>
-    </div>
-
-    <div class="col-4">
-      <div class="form-group">
-        <label>Borrower Middle Name</label>
-        <input type="text"
-               class="form-control"
-               readonly
-               [ngModel]="currentLoan.borrowerMiddleName" />
-      </div>
-    </div>
-
-    <div class="col-4">
-      <div class="form-group">
-        <label>Borrower Last Name</label>
-        <input type="text"
-               class="form-control"
-               readonly
-               [ngModel]="currentLoan.borrowerLastName" />
-      </div>
+    <div class="col-12">
+      <label>Borrowers</label>
     </div>
   </div>
-
+  <div class="row">
+    <div class="col-4 form-group"
+         *ngFor="let borrower of currentLoan.borrowers">
+      <input type="text"
+             class="form-control"
+             readonly
+             [ngModel]="borrower.firstName" />
+    </div>
+  </div>
   <div class="row">
     <div class="col-4">
       <div class="form-group">
@@ -61,7 +42,8 @@
         <input type="text"
                class="form-control"
                id="loanId"
-               readonly  [ngModel]="currentLoan.rateOfInterest" />
+               readonly
+               [ngModel]="currentLoan.rateOfInterest" />
       </div>
     </div>
   </div>
@@ -73,7 +55,8 @@
         <input type="text"
                class="form-control"
                id="loanId"
-               readonly  [ngModel]="currentLoan.loanAmt" />
+               readonly
+               [ngModel]="currentLoan.loanAmt" />
       </div>
     </div>
     <div class="col-4">
@@ -82,7 +65,8 @@
         <input type="text"
                class="form-control"
                id="loanId"
-               readonly  [ngModel]="currentLoan.emiAmt" />
+               readonly
+               [ngModel]="currentLoan.emiAmt" />
       </div>
     </div>
     <div class="col-4">
@@ -91,7 +75,8 @@
         <input type="text"
                class="form-control"
                id="loanId"
-               readonly  [ngModel]="currentLoan.balanceAmt" />
+               readonly
+               [ngModel]="currentLoan.balanceAmt" />
       </div>
     </div>
   </div>

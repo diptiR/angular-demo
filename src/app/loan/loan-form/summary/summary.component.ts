@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
-import { Loan } from "./interface/loan.interface";
+import { Loan } from "../../../interface/loan.interface";
 
 @Component({
   selector: 'pm-summary',

@@ -1,8 +1,52 @@
 {
     "loanId": "personal1",
-    "borrowerFirstName": "Aditya",
-    "borrowerMiddleName": "Suresh",
-    "borrowerLastName": "Acharya",
+    "borrowers": [
+        {
+            "prefix":"Mr",
+            "firstName": "Aditya",
+            "middleName": "Suresh",
+            "lastName": "Acharya",
+            "address": [
+                {
+                    "type": "home",
+                    "country": "india",
+                    "state": "maharashtra",
+                    "street1": "powai",
+                    "street2": "vikhroli",
+                    "pincode": 421142
+                },
+                {
+                    "type": "work",
+                    "country": "india",
+                    "state": "maharashtra",
+                    "street1": "powai",
+                    "street2": "vikhroli",
+                    "pincode": 421142
+                }
+            ],
+            "profile": "SSE",
+            "companyName": "Xoriant",
+            "pannumber": "ASDFQWER",
+            "aadharnumber": "1254789633"
+        },
+        {
+            "firstName": "Sunita",
+            "middleName": "Aditya",
+            "lastName": "Acharya",
+            "address": [
+                {
+                    "type": "home",
+                    "country": "india",
+                    "state": "maharashtra",
+                    "street1": "powai",
+                    "street2": "vikhroli",
+                    "pincode": 421142
+                }
+            ],
+            "pannumber": "ASDFQWER",
+            "aadharnumber": "1254789633"
+        }
+    ],
     "type": "Personal",
     "emiAmt": 20000,
     "rateOfInterest": 8.5,
