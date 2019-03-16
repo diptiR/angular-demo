@@ -5,21 +5,23 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { HeaderModule } from './common/components/modules/header/header.module';
 import { FooterModule } from './common/components/modules/footer/footer.module';
+import { PipelineModule } from './modules/pipeline/pipeline.module';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { PipelineComponent } from './pipeline/pipeline.component';
-import { PipelineResolver } from './pipeline/pipelineResolver.service';
 import { LoanCanLoad } from './loan/loanCanLoad';
 import { AddLoanComponent } from './add-loan/add-loan.component';
+import { PipelineComponent } from './modules/pipeline/pipeline.component';
+import { PipelineResolver } from './modules/pipeline/pipelineResolver.service';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, PipelineComponent, AddLoanComponent],
+  declarations: [AppComponent, HomeComponent, AddLoanComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
     HeaderModule,
     FooterModule,
+    PipelineModule,
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent },
       { path: 'new-loan', component: AddLoanComponent },

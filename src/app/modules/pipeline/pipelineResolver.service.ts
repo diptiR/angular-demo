@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Loan } from '../interface/loan.interface';
+import { Loan } from '../../interface/loan.interface';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable()
