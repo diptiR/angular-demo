@@ -1,19 +1,14 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { RouterModule } from "@angular/router";
-import { AddLoanComponent } from "./add-loan/add-loan.component";
-import { LoanCanLoad } from "./loan/loanCanLoad";
+import { LoanComponent } from "./modules/pipeline/modules/loan/loan.component";
 import { PipelineComponent } from "./modules/pipeline/pipeline.component";
 import { PipelineResolver } from "./modules/pipeline/pipelineResolver.service";
 import { HomeComponent } from "./modules/home/home.component";
 
 const appRoutes = [
   { path: "home", component: HomeComponent },
-  //   {
-  //     path: "loan/:id",
-  //     loadChildren: "./loan/loan-forms.module#LoanFormsModule",
-  //     canLoad: [LoanCanLoad]
-  //   },
+  { path: "loan/:id", component: LoanComponent },
   {
     path: "pipeline",
     component: PipelineComponent,
