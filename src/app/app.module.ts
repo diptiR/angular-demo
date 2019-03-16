@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
+import { HeaderModule } from './common/components/modules/header/header.module';
+import { FooterModule } from './common/components/modules/footer/footer.module';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { PipelineComponent } from './pipeline/pipeline.component';
@@ -15,6 +18,8 @@ import { AddLoanComponent } from './add-loan/add-loan.component';
   imports: [
     BrowserModule,
     HttpClientModule,
+    HeaderModule,
+    FooterModule,
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent },
       { path: 'new-loan', component: AddLoanComponent },
