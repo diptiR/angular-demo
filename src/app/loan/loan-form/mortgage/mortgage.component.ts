@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'pm-mortgage',
   templateUrl: './mortgage.component.html',
-  styleUrls: ['./mortgage.component.css']
+  styleUrls: ['./mortgage.component.scss']
 })
 export class MortgageComponent implements OnInit {
 

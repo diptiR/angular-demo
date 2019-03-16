@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { SummaryComponent } from './loan-form/summary/summary.component'
-import { LoanComponent } from "./loan.component";
+import { SummaryComponent } from './loan-form/summary/summary.component';
+import { LoanComponent } from './loan.component';
 import { BorrowerComponent } from './loan-form/borrower/borrower.component';
 import { LoanResolver } from './loan-resolve.service';
 import { MortgageComponent } from './loan-form/mortgage/mortgage.component';
@@ -20,15 +20,15 @@ import { InstallmentComponent } from './loan-form/installment/installment.compon
     ReactiveFormsModule,
     RouterModule.forChild([
       {
-        path: "",
+        path: '',
         component: LoanComponent,
         children: [
-          { path: "summary", component: SummaryComponent },
-          { path: "borrower", component: BorrowerComponent },
-          { path: "mortgage", component: MortgageComponent },
-          { path: "repayment", component: RepaymentComponent },
-          { path: "installment", component: InstallmentComponent },
-          { path: "", redirectTo: "summary", pathMatch: "full" },
+          { path: 'summary', component: SummaryComponent },
+          { path: 'borrower', component: BorrowerComponent },
+          { path: 'mortgage', component: MortgageComponent },
+          { path: 'repayment', component: RepaymentComponent },
+          { path: 'installment', component: InstallmentComponent },
+          { path: '', redirectTo: 'summary', pathMatch: 'full' },
         ],
         resolve: {
           loan: LoanResolver

@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
-import { Loan } from "../../../interface/loan.interface";
+import { ActivatedRoute } from '@angular/router';
+import { Loan } from '../../../interface/loan.interface';
 
 @Component({
   selector: 'pm-summary',
   templateUrl: './summary.component.html',
-  styleUrls: ['./summary.component.css']
+  styleUrls: ['./summary.component.scss']
 })
 export class SummaryComponent implements OnInit {
 
@@ -18,7 +18,7 @@ export class SummaryComponent implements OnInit {
       (response) => {
         this.currentLoan = <Loan>response.loan;
       }
-    )
+    );
   }
 
 }

@@ -1,11 +1,11 @@
-import { Component, OnInit } from "@angular/core";
-import { Router, ActivatedRoute } from "@angular/router";
-import { Loan } from "../interface/loan.interface";
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Loan } from '../interface/loan.interface';
 
 @Component({
-  selector: "pm-pipeline",
-  templateUrl: "./pipeline.component.html",
-  styleUrls: ["./pipeline.component.css"]
+  selector: 'pm-pipeline',
+  templateUrl: './pipeline.component.html',
+  styleUrls: ['./pipeline.component.scss']
 })
 export class PipelineComponent implements OnInit {
   loans: Loan[] = [];
@@ -13,7 +13,7 @@ export class PipelineComponent implements OnInit {
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
 
   loanClicked(id: string) {
-    this.router.navigate(["loan", id]);
+    this.router.navigate(['loan', id]);
   }
 
   ngOnInit() {

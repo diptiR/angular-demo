@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'pm-loan',
   templateUrl: './loan.component.html',
-  styleUrls: ['./loan.component.css']
+  styleUrls: ['./loan.component.scss']
 })
 export class LoanComponent implements OnInit {
 

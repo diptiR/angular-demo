@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from "@angular/forms";
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'pm-borrower',
   templateUrl: './borrower.component.html',
-  styleUrls: ['./borrower.component.css']
+  styleUrls: ['./borrower.component.scss']
 })
 export class BorrowerComponent implements OnInit {
 
   borrowerForm: FormGroup = new FormGroup({
-      firstName: new FormControl("")
+      firstName: new FormControl('')
   });
 
   constructor() { }
