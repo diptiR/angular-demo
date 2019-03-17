@@ -2,7 +2,6 @@ import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { RouterModule } from "@angular/router";
 import { PipelineComponent } from "./modules/pipeline/pipeline.component";
-import { PipelineResolver } from "./modules/pipeline/pipelineResolver.service";
 import { HomeComponent } from "./modules/home/home.component";
 
 const appRoutes = [
@@ -13,10 +12,7 @@ const appRoutes = [
   },
   {
     path: "pipeline",
-    component: PipelineComponent,
-    resolve: {
-      data: PipelineResolver
-    }
+    component: PipelineComponent
   },
   { path: "", redirectTo: "home", pathMatch: "full" }
 ];

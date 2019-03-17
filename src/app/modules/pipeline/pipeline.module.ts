@@ -1,14 +1,15 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { RouterModule } from "@angular/router";
+import { HttpClientModule } from "@angular/common/http";
 
 import { PipelineComponent } from "./pipeline.component";
-import { PipelineResolver } from "./pipelineResolver.service";
+import { PipelineDataService } from "./pipeline-data.service";
 
 @NgModule({
-  imports: [BrowserModule, RouterModule],
+  imports: [BrowserModule, RouterModule, HttpClientModule],
   declarations: [PipelineComponent],
   exports: [PipelineComponent],
-  providers: [PipelineResolver]
+  providers: [PipelineDataService]
 })
 export class PipelineModule {}

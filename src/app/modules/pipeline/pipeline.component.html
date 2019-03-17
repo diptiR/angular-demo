@@ -16,8 +16,8 @@
       <th>Balance</th>
     </tr>
   </thead>
-  <tbody *ngIf="loans.length">
-    <tr (click)="loanClicked(loan.loanId)" *ngFor="let loan of loans">
+  <tbody *ngIf="response?.loans.length">
+    <tr (click)="loanClicked(loan.loanId)" *ngFor="let loan of response?.loans">
       <td>{{ loan?.loanId }}</td>
       <td>
         {{
