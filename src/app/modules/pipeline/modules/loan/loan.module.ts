@@ -1,12 +1,11 @@
 import { NgModule } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
 
 import { LoanComponent } from "./loan.component";
+import { RouterModule } from "@angular/router";
 
 @NgModule({
-  imports: [BrowserModule],
+  imports: [RouterModule.forChild([{ path: "", component: LoanComponent }])],
   declarations: [LoanComponent],
   exports: [LoanComponent]
 })
-
 export class LoanModule {}

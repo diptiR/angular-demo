@@ -10,7 +10,6 @@ import { FooterModule } from "./common/components/modules/footer/footer.module";
 
 import { PipelineModule } from "./modules/pipeline/pipeline.module";
 import { HomeModule } from "./modules/home/home.module";
-import { LoanModule } from "./modules/pipeline/modules/loan/loan.module";
 
 
 import { AppComponent } from "./app.component";
@@ -24,7 +23,6 @@ import { AppComponent } from "./app.component";
     FooterModule,
     PipelineModule,
     HomeModule,
-    LoanModule,
     RouterModule,
     AppRoutingModule
   ],
