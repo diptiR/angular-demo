@@ -9,11 +9,17 @@ import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 export class PipelineDataService {
   constructor(private http: HttpClient) {}
 
-  url: string = "assets/mockapi/loans.json";
-
   getLoans(): Observable<Loan[] | loanError> {
+    const url: string = "assets/mockapi/loans.json";
     return this.http
-      .get<Loan[] | loanError>(this.url)
+      .get<Loan[] | loanError>(url)
+      .pipe(catchError(error => this.handleHttpError(error)));
+  }
+
+  getLoan(id: string): Observable<Loan[] | loanError> {
+    const url: string = "assets/mockapi/loan.json";
+    return this.http
+      .get<Loan[] | loanError>(url)
       .pipe(catchError(error => this.handleHttpError(error)));
   }
 
