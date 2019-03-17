@@ -1,5 +1,6 @@
-export interface Loan {
+export class Loan {
   loanId: string;
+  prefix: string;
   borrowerFirstName: string;
   borrowerMiddleName: string;
   borrowerLastName: string;

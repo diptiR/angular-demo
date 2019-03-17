@@ -1,1 +1,105 @@
-<div>Add Component works!!</div>
+<form [formGroup]="loanform">
+  <div class="form-group">
+    <label for="email">Borrower Name:</label>
+  </div>
+  <div class="row">
+    <div class="col-3">
+      <div class="form-group">
+        <input
+          formControlName="prefix"
+          type="text"
+          class="form-control"
+          placeholder="Prefix"
+        />
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="borrowerFirstName"
+          placeholder="First Name"
+        />
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="borrowerMiddleName"
+          placeholder="Middle Name"
+        />
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="borrowerLastName"
+          placeholder="Last Name"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-3">
+      <div class="form-group">
+        <label>Rate of Interest</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="rateOfInterest"
+          placeholder="Rate of Interest"
+        />
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="form-group">
+        <label>Loan Amount</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="loanAmt"
+          placeholder="Loan Amount"
+        />
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="form-group">
+        <label>EMI Amount</label>
+        <input
+          formControlName="emiAmt"
+          type="text"
+          class="form-control"
+          placeholder="EMI Amount"
+        />
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="form-group">
+        <label>Balance Amount</label>
+        <input
+          formControlName="balanceAmt"
+          type="text"
+          class="form-control"
+          placeholder="Balance Amount"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-4">
+      <button type="button" (click)="goBack()" class="btn btn-secondary">
+        Back
+      </button>
+    </div>
+    <div class="col-4" *ngIf="isEdit">
+      <button type="button" (click)="save()" class="btn btn-secondary">Save</button>
+    </div>
+  </div>
+</form>

@@ -22,6 +22,10 @@ export class PipelineComponent implements OnInit {
     this.router.navigate(["loan", id]);
   }
 
+  loanEditClicked(id: string){
+    this.router.navigate(["loan", id, "edit"]);
+  }
+
   ngOnInit() {
     this.pipelineDataService.getLoans().subscribe(response => {
       this.response = <Loan[]>response;

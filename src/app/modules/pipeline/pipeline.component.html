@@ -1,38 +1,39 @@
-<div class="float-right">
-  <button class="btn btn-secondary" [routerLink]="['/loan', 'newloan']">
-    Add Loan
-  </button>
+<div class="pipeline">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Loan Id</th>
+        <th>Borrower</th>
+        <th>Type</th>
+        <th>EMI Amount</th>
+        <th>Rate of Interest</th>
+        <th>Loan Amount</th>
+        <th>Balance</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody *ngIf="response?.loans.length">
+      <tr *ngFor="let loan of response?.loans"
+      >
+        <td>{{ loan?.loanId }}</td>
+        <td>
+          {{
+            loan?.borrowerFirstName +
+              " " +
+              loan?.borrowerMiddleName +
+              " " +
+              loan?.borrowerLastName
+          }}
+        </td>
+        <td>{{ loan?.type }}</td>
+        <td>{{ loan?.emiAmt }}</td>
+        <td>{{ loan?.rateOfInterest }}</td>
+        <td>{{ loan?.loanAmt }}</td>
+        <td>{{ loan?.balanceAmt }}</td>
+        <td><button (click)="loanClicked(loan.loanId)" type="button" class="btn btn-secondary">View</button></td>
+        <td><button (click)="loanEditClicked(loan.loanId)" type="button" class="btn btn-secondary">Edit</button></td>
+      </tr>
+    </tbody>
+  </table>
 </div>
-
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Loan Id</th>
-      <th>Borrower</th>
-      <th>Type</th>
-      <th>EMI Amount</th>
-      <th>Rate of Interest</th>
-      <th>Loan Amount</th>
-      <th>Balance</th>
-    </tr>
-  </thead>
-  <tbody *ngIf="response?.loans.length">
-    <tr (click)="loanClicked(loan.loanId)" *ngFor="let loan of response?.loans">
-      <td>{{ loan?.loanId }}</td>
-      <td>
-        {{
-          loan?.borrowerFirstName +
-            " " +
-            loan?.borrowerMiddleName +
-            " " +
-            loan?.borrowerLastName
-        }}
-      </td>
-      <td>{{ loan?.type }}</td>
-      <td>{{ loan?.emiAmt }}</td>
-      <td>{{ loan?.rateOfInterest }}</td>
-      <td>{{ loan?.loanAmt }}</td>
-      <td>{{ loan?.balanceAmt }}</td>
-    </tr>
-  </tbody>
-</table>

@@ -16,10 +16,10 @@ export class PipelineDataService {
       .pipe(catchError(error => this.handleHttpError(error)));
   }
 
-  getLoan(id: string): Observable<Loan[] | loanError> {
+  getLoan(id: string): Observable<Loan | loanError> {
     const url: string = "assets/mockapi/loan.json";
     return this.http
-      .get<Loan[] | loanError>(url)
+      .get<Loan | loanError>(url)
       .pipe(catchError(error => this.handleHttpError(error)));
   }
 
