@@ -14,7 +14,6 @@ export class PipelineComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private activatedRoute: ActivatedRoute,
     private pipelineDataService: PipelineDataService
   ) {}
 
