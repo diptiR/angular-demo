@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { PipelineDataService } from "../../pipeline-data.service";
 import { ActivatedRoute, Router, UrlSegment } from "@angular/router";
 import { Loan } from "src/app/common/interface/loan.interface";
-import { FormGroup, FormControl, FormBuilder } from "@angular/forms";
+import { FormGroup, FormControl, FormBuilder, Validators } from "@angular/forms";
 
 @Component({
   templateUrl: "./loan.component.html",
@@ -12,14 +12,14 @@ export class LoanComponent implements OnInit {
   loan: Loan = new Loan();
   isEdit: boolean = false;
   loanform = this.fb.group({
-    prefix: [{ value: "", disabled: !this.isEdit }],
-    borrowerFirstName: [{ value: "", disabled: !this.isEdit }],
-    borrowerMiddleName: [{ value: "", disabled: !this.isEdit }],
-    borrowerLastName: [{ value: "", disabled: !this.isEdit }],
-    rateOfInterest: [{ value: "", disabled: !this.isEdit }],
-    loanAmt: [{ value: "", disabled: !this.isEdit }],
-    emiAmt: [{ value: "", disabled: !this.isEdit }],
-    balanceAmt: [{ value: "", disabled: !this.isEdit }]
+    prefix: ["", Validators.required],
+    borrowerFirstName: ["", Validators.required],
+    borrowerMiddleName: ["", Validators.required],
+    borrowerLastName: ["", Validators.required],
+    rateOfInterest: ["", Validators.required],
+    loanAmt: ["", Validators.required],
+    emiAmt: ["", Validators.required],
+    balanceAmt: ["", Validators.required]
   });
 
   constructor(
@@ -27,14 +27,14 @@ export class LoanComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private fb: FormBuilder,
     private router: Router
-  ) {}
+  ) { }
 
   goBack(): void {
     this.router.navigate(["pipeline"]);
   }
 
-  enableControls(value: boolean){
-    if(value){
+  enableControls(value: boolean) {
+    if (value) {
       this.loanform.get("prefix").enable();
       this.loanform.get("borrowerFirstName").enable();
       this.loanform.get("borrowerMiddleName").enable();
@@ -43,7 +43,7 @@ export class LoanComponent implements OnInit {
       this.loanform.get("loanAmt").enable();
       this.loanform.get("emiAmt").enable();
       this.loanform.get("balanceAmt").enable();
-    } else{
+    } else {
       this.loanform.get("prefix").disable();
       this.loanform.get("borrowerFirstName").disable();
       this.loanform.get("borrowerMiddleName").disable();
@@ -53,7 +53,7 @@ export class LoanComponent implements OnInit {
       this.loanform.get("emiAmt").disable();
       this.loanform.get("balanceAmt").disable();
     }
-    
+
   }
 
   ngOnInit() {
@@ -61,7 +61,7 @@ export class LoanComponent implements OnInit {
     this.activatedRoute.url.subscribe(UrlSegment => {
       this.isEdit = UrlSegment[0] && UrlSegment[0].path === "edit";
       this.enableControls(this.isEdit);
-      
+
     })
 
     this.activatedRoute.params.subscribe(params => {
