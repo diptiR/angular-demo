@@ -13,10 +13,10 @@
         <th></th>
       </tr>
     </thead>
-    <tbody *ngIf="response?.loans.length">
-      <tr *ngFor="let loan of response?.loans"
+    <tbody *ngIf="loans.length">
+      <tr *ngFor="let loan of loans"
       >
-        <td>{{ loan?.loanId }}</td>
+        <td>{{ loan?.id }}</td>
         <td>
           {{
             loan?.borrowerFirstName +
@@ -31,8 +31,8 @@
         <td>{{ loan?.rateOfInterest }}</td>
         <td>{{ loan?.loanAmt }}</td>
         <td>{{ loan?.balanceAmt }}</td>
-        <td><button (click)="loanClicked(loan.loanId)" type="button" class="btn btn-secondary">View</button></td>
-        <td><button (click)="loanEditClicked(loan.loanId)" type="button" class="btn btn-secondary">Edit</button></td>
+        <td><button (click)="loanClicked(loan.id)" type="button" class="btn btn-secondary">View</button></td>
+        <td><button (click)="loanEditClicked(loan.id)" type="button" class="btn btn-secondary">Edit</button></td>
       </tr>
     </tbody>
   </table>

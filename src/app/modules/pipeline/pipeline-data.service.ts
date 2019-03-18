@@ -7,17 +7,19 @@ import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 
 @Injectable()
 export class PipelineDataService {
-  constructor(private http: HttpClient) {}
+  baseUrl = "http://localhost:3000/";
+
+  constructor(private http: HttpClient) { }
 
   getLoans(): Observable<Loan[] | loanError> {
-    const url: string = "assets/mockapi/loans.json";
+    const url: string = this.baseUrl + "loans";
     return this.http
       .get<Loan[] | loanError>(url)
       .pipe(catchError(error => this.handleHttpError(error)));
   }
 
   getLoan(id: string): Observable<Loan | loanError> {
-    const url: string = "assets/mockapi/loan.json";
+    const url: string = this.baseUrl + "loans/" + id;
     return this.http
       .get<Loan | loanError>(url)
       .pipe(catchError(error => this.handleHttpError(error)));

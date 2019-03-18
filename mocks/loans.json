@@ -1,7 +1,8 @@
 {
   "loans": [
     {
-      "loanId": "personal1",
+      "prefix":"Mr",
+      "id": "personal1",
       "borrowerFirstName": "Aditya",
       "borrowerMiddleName": "Suresh",
       "borrowerLastName": "Acharya",
@@ -12,7 +13,8 @@
       "balanceAmt": 800000
     },
     {
-      "loanId": "personal2",
+      "prefix":"Mr",
+      "id": "personal2",
       "borrowerFirstName": "Bhavit",
       "borrowerMiddleName": "Suresh",
       "borrowerLastName": "Acharya",
@@ -23,7 +25,8 @@
       "balanceAmt": 80000
     },
     {
-      "loanId": "personal3",
+      "prefix":"Mr",
+      "id": "personal3",
       "borrowerFirstName": "Christia",
       "borrowerMiddleName": "Andrew",
       "borrowerLastName": "Dsouza",
@@ -34,7 +37,8 @@
       "balanceAmt": 50000
     },
     {
-      "loanId": "personal4",
+      "prefix":"Mr",
+      "id": "personal4",
       "borrowerFirstName": "Dharmesh",
       "borrowerMiddleName": "Remo",
       "borrowerLastName": "Dsouza",
