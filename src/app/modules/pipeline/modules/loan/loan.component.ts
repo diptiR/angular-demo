@@ -56,12 +56,19 @@ export class LoanComponent implements OnInit {
 
   }
 
+  save(loan) {
+    let loanObj = Object.assign(this.loan, loan);
+    this.pipelineDataService.saveLoan(loanObj).subscribe(() => {
+      this.loanform.reset();
+      this.goBack();
+    })
+  }
+
   ngOnInit() {
 
     this.activatedRoute.url.subscribe(UrlSegment => {
       this.isEdit = UrlSegment[0] && UrlSegment[0].path === "edit";
       this.enableControls(this.isEdit);
-
     })
 
     this.activatedRoute.params.subscribe(params => {

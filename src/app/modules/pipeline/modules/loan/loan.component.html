@@ -5,46 +5,38 @@
   <div class="row">
     <div class="col-3">
       <div class="form-group">
-        <input
-          formControlName="prefix"
-          type="text"
-          class="form-control"
-          placeholder="Prefix"
-          [ngClass]="{'invalid': loanform.get('prefix').invalid && loanform.get('prefix').dirty}"
-        />
+        <input formControlName="prefix"
+               type="text"
+               class="form-control"
+               placeholder="Prefix"
+               [ngClass]="{'invalid': loanform.get('prefix').invalid && loanform.get('prefix').dirty}" />
       </div>
     </div>
     <div class="col-3">
       <div class="form-group">
-        <input
-          type="text"
-          class="form-control"
-          formControlName="borrowerFirstName"
-          placeholder="First Name"
-           [ngClass]="{'invalid': loanform.get('borrowerFirstName').invalid && loanform.get('borrowerFirstName').dirty}"
-        />
+        <input type="text"
+               class="form-control"
+               formControlName="borrowerFirstName"
+               placeholder="First Name"
+               [ngClass]="{'invalid': loanform.get('borrowerFirstName').invalid && loanform.get('borrowerFirstName').dirty}" />
       </div>
     </div>
     <div class="col-3">
       <div class="form-group">
-        <input
-          type="text"
-          class="form-control"
-          formControlName="borrowerMiddleName"
-          placeholder="Middle Name"
-           [ngClass]="{'invalid': loanform.get('borrowerMiddleName').invalid && loanform.get('borrowerMiddleName').dirty}"
-        />
+        <input type="text"
+               class="form-control"
+               formControlName="borrowerMiddleName"
+               placeholder="Middle Name"
+               [ngClass]="{'invalid': loanform.get('borrowerMiddleName').invalid && loanform.get('borrowerMiddleName').dirty}" />
       </div>
     </div>
     <div class="col-3">
       <div class="form-group">
-        <input
-          type="text"
-          class="form-control"
-          formControlName="borrowerLastName"
-          placeholder="Last Name"
-           [ngClass]="{'invalid': loanform.get('borrowerLastName').invalid && loanform.get('borrowerLastName').dirty}"
-        />
+        <input type="text"
+               class="form-control"
+               formControlName="borrowerLastName"
+               placeholder="Last Name"
+               [ngClass]="{'invalid': loanform.get('borrowerLastName').invalid && loanform.get('borrowerLastName').dirty}" />
       </div>
     </div>
   </div>
@@ -53,61 +45,59 @@
     <div class="col-3">
       <div class="form-group">
         <label>Rate of Interest</label>
-        <input
-          type="text"
-          class="form-control"
-          formControlName="rateOfInterest"
-          placeholder="Rate of Interest"
-           [ngClass]="{'invalid': loanform.get('rateOfInterest').invalid && loanform.get('rateOfInterest').dirty}"
-        />
+        <input type="text"
+               class="form-control"
+               formControlName="rateOfInterest"
+               placeholder="Rate of Interest"
+               [ngClass]="{'invalid': loanform.get('rateOfInterest').invalid && loanform.get('rateOfInterest').dirty}" />
       </div>
     </div>
     <div class="col-3">
       <div class="form-group">
         <label>Loan Amount</label>
-        <input
-          type="text"
-          class="form-control"
-          formControlName="loanAmt"
-          placeholder="Loan Amount"
-           [ngClass]="{'invalid': loanform.get('loanAmt').invalid && loanform.get('loanAmt').dirty}"
-        />
+        <input type="text"
+               class="form-control"
+               formControlName="loanAmt"
+               placeholder="Loan Amount"
+               [ngClass]="{'invalid': loanform.get('loanAmt').invalid && loanform.get('loanAmt').dirty}" />
       </div>
     </div>
     <div class="col-3">
       <div class="form-group">
         <label>EMI Amount</label>
-        <input
-          formControlName="emiAmt"
-          type="text"
-          class="form-control"
-          placeholder="EMI Amount"
-           [ngClass]="{'invalid': loanform.get('emiAmt').invalid && loanform.get('emiAmt').dirty}"
-        />
+        <input formControlName="emiAmt"
+               type="text"
+               class="form-control"
+               placeholder="EMI Amount"
+               [ngClass]="{'invalid': loanform.get('emiAmt').invalid && loanform.get('emiAmt').dirty}" />
       </div>
     </div>
     <div class="col-3">
       <div class="form-group">
         <label>Balance Amount</label>
-        <input
-          formControlName="balanceAmt"
-          type="text"
-          class="form-control"
-          placeholder="Balance Amount"
-           [ngClass]="{'invalid': loanform.get('balanceAmt').invalid && loanform.get('balanceAmt').dirty}"
-        />
+        <input formControlName="balanceAmt"
+               type="text"
+               class="form-control"
+               placeholder="Balance Amount"
+               [ngClass]="{'invalid': loanform.get('balanceAmt').invalid && loanform.get('balanceAmt').dirty}" />
       </div>
     </div>
   </div>
 
   <div class="row">
     <div class="col-1">
-      <button type="button" (click)="goBack()" class="btn btn-secondary">
+      <button type="button"
+              (click)="goBack()"
+              class="btn btn-secondary">
         Back
       </button>
     </div>
-    <div class="col-1" *ngIf="isEdit">
-      <button type="button" (click)="save()" class="btn btn-secondary">Save</button>
+    <div class="col-1"
+         *ngIf="isEdit">
+      <button type="button"
+              (click)="save(loanform.value)"
+              [disabled]="loanform.invalid"
+              class="btn btn-secondary">Save</button>
     </div>
   </div>
 </form>

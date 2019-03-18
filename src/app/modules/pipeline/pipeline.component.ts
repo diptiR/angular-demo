@@ -15,15 +15,15 @@ export class PipelineComponent implements OnInit {
   constructor(
     private router: Router,
     private pipelineDataService: PipelineDataService
-  ) {}
+  ) { }
 
   loanClicked(id: string) {
     this.router.navigate(["loan", id]);
   }
 
-  loanEditClicked(id: string){
+  loanEditClicked(id: string) {
     this.router.navigate(["loan", id, "edit"]);
-  }
+  }  
 
   ngOnInit() {
     this.pipelineDataService.getLoans().subscribe(response => {

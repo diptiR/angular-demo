@@ -1,5 +1,5 @@
 export class Loan {
-  loanId: string;
+  id: string;
   prefix: string;
   borrowerFirstName: string;
   borrowerMiddleName: string;
