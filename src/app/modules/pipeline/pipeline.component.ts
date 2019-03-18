@@ -28,6 +28,7 @@ export class PipelineComponent implements OnInit {
   ngOnInit() {
     this.pipelineDataService.getLoans().subscribe(response => {
       this.loans = <Loan[]>response;
-    });
+    },
+    (error) => {console.log(error)});
   }
 }
