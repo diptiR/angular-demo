@@ -61,7 +61,8 @@ export class LoanComponent implements OnInit {
     this.pipelineDataService.saveLoan(loanObj).subscribe(() => {
       this.loanform.reset();
       this.goBack();
-    })
+    },
+      (error) => { console.log(error) })
   }
 
   ngOnInit() {
@@ -84,7 +85,9 @@ export class LoanComponent implements OnInit {
           emiAmt: this.loan.emiAmt,
           balanceAmt: this.loan.balanceAmt
         });
-      });
+      },
+        (error) => { console.log(error) }
+      );
     });
   }
 }

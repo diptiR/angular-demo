@@ -7,7 +7,7 @@
       "borrowerMiddleName": "Suresh",
       "borrowerLastName": "Acharya",
       "rateOfInterest": 8.5,
-      "loanAmt": "150500",
+      "loanAmt": "1000",
       "emiAmt": 20000,
       "balanceAmt": 800000,
       "id": "personal1"
@@ -21,7 +21,7 @@
       "type": "Personal",
       "emiAmt": 5000,
       "rateOfInterest": 8.5,
-      "loanAmt": 100000,
+      "loanAmt": "1500000",
       "balanceAmt": 80000
     },
     {
